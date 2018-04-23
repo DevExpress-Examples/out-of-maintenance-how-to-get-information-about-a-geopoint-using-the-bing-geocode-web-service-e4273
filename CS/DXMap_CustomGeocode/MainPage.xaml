@@ -1,0 +1,56 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+    xmlns:dxm="http://schemas.devexpress.com/winfx/2008/xaml/map" 
+    xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" 
+    x:Class="DXMap_CustomGeocode.MainPage"
+    mc:Ignorable="d"
+    d:DesignHeight="300" d:DesignWidth="400">
+
+    <UserControl.Resources>
+        <sys:String x:Key="bingKey">YOUR_BING_MAPS_KEY</sys:String>
+    </UserControl.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <dxlc:LayoutControl>
+            <dxm:MapControl x:Name="mapControl">
+                <dxm:ImageTilesLayer>
+                    <dxm:ImageTilesLayer.DataProvider>
+                        <dxm:BingMapDataProvider BingKey="{Binding Source={StaticResource bingKey}}"/>
+                    </dxm:ImageTilesLayer.DataProvider>
+                </dxm:ImageTilesLayer>
+                <!--region #Geocode-->
+                <dxm:InformationLayer>
+                    <dxm:InformationLayer.DataProvider>
+                        <dxm:BingGeocodeDataProvider x:Name="geocodeProvider" 
+                                                     BingKey="{Binding Source={StaticResource bingKey}}"
+                                                     LocationInformationReceived="geocodeProvider_LocationInformationReceived"/>
+                    </dxm:InformationLayer.DataProvider>
+                </dxm:InformationLayer>
+                <!--endregion #Geocode-->
+            </dxm:MapControl>
+            <dxlc:LayoutGroup View="Group" Orientation="Vertical" Width="250">
+                <dxlc:LayoutItem Label="Latitude:">
+                    <TextBox x:Name="tbLatitude"/>
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem Label="Longitude:">
+                    <TextBox x:Name="tbLongitude"/>
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem>
+                    <Button Content="Request Location" Click="Button_Click"/>
+                </dxlc:LayoutItem>
+                <dxlc:LayoutItem VerticalAlignment="Stretch">
+                    <ScrollViewer HorizontalScrollBarVisibility="Visible"
+                                  VerticalScrollBarVisibility="Visible">
+                        <TextBlock x:Name="tbResult"/>
+                    </ScrollViewer>
+                </dxlc:LayoutItem>
+            </dxlc:LayoutGroup>
+
+        </dxlc:LayoutControl>
+
+    </Grid>
+</UserControl>
