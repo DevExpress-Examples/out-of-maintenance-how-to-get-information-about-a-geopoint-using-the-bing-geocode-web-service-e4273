@@ -1,7 +1,7 @@
 <!-- default file list -->
 *Files to look at*:
 
-* **[MainPage.xaml](./CS/DXMap_CustomGeocode/MainPage.xaml) (VB: [MainPage.xaml.vb](./VB/DXMap_CustomGeocode/MainPage.xaml.vb))**
+* **[MainPage.xaml](./CS/DXMap_CustomGeocode/MainPage.xaml) (VB: [MainPage.xaml](./VB/DXMap_CustomGeocode/MainPage.xaml))**
 * [MainPage.xaml.cs](./CS/DXMap_CustomGeocode/MainPage.xaml.cs) (VB: [MainPage.xaml.vb](./VB/DXMap_CustomGeocode/MainPage.xaml.vb))
 <!-- default file list end -->
 # How to get information about a geopoint using the Bing Geocode web service
