@@ -2,7 +2,7 @@
 *Files to look at*:
 
 * [MainPage.xaml](./CS/GetPointLocationInformation/MainPage.xaml) (VB: [MainPage.xaml](./VB/GetPointLocationInformation/MainPage.xaml))
-* [MainPage.xaml.cs](./CS/GetPointLocationInformation/MainPage.xaml.cs) (VB: [MainPage.xaml](./VB/GetPointLocationInformation/MainPage.xaml))
+* [MainPage.xaml.cs](./CS/GetPointLocationInformation/MainPage.xaml.cs) (VB: [MainPage.xaml.vb](./VB/GetPointLocationInformation/MainPage.xaml.vb))
 <!-- default file list end -->
 # How to get information about a geopoint using the Bing Geocode web service
 
